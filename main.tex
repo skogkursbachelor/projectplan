@@ -1,0 +1,37 @@
+% Author - Jon Arnt Kårstad, NTNU IMT
+\documentclass{article}
+
+% Importing document settings from our file "packages.sty"
+\usepackage{packages}
+
+% Beginning of document
+\begin{document}
+
+% Inserting title page
+\import{./}{title}
+
+% Defining front matter settings (Norsk: innstillinger for forord m.m.)
+\frontmatter
+
+% Inserting table of contents
+\tableofcontents
+
+% Inserting list of figures & list of tables
+\listoffigures
+\listoftables
+
+% Defining main matter settings (Norsk: innstillinger for hoveddelen av teksten)
+\mainmatter
+
+\import{./Sections/}{Goals_and_Constraints}
+\import{./Sections/}{Scope}
+\import{./Sections/}{Project_Organization}
+\import{./Sections/}{Planning_Follow-up_Reporting}
+\import{./Sections/}{Quality_Assurance}
+\import{./Sections/}{Execution_Plan}
+
+%\addappendix
+%\include{Appendices/Task_Description}
+
+% End of document
+\end{document}

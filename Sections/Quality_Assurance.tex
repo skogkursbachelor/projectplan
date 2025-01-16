@@ -1,0 +1,105 @@
+\section{Quality Assurance Organization}
+
+\subsection{Documentation, Storage, Source Code}
+
+\begin{comment}
+    Documentation
+        Kode
+            Følge industri-standard dokumentasjon og kodestil for hvert kodespråk
+            Kanksje generere dokumetasjonssider fra kodedokumentasjon
+        Misc dokumenter
+            
+        Møter og enigheter
+            Møtenotater/referat skal bli tatt av alle møter
+            Alle viktige valg som blir gjort etter diskusjoner blir notert
+        
+    Storage ?
+        Skylagring (slack, google drive, w/e) med backup på en separat enhet, egen eller sky
+        
+\end{comment}
+
+\subsection{Plan for Inspections \& Testing}
+
+\subsection{Tools}
+
+\begin{table} [H]
+    \centering
+    \begin{tabular}{|l|l|l|}
+    \hline
+    Name & Type & Use-case \\
+    \hline
+    OverLeaf & Online \LaTeX-Editor & Report writing \\
+    JetBrains IDE Family & IDE & Code Development \\
+    VS Code & IDE & Code Development \\
+    GitHub & Code Repository & Version Control \& Scrum \\
+    Docker & Containerization Platform & Containerizing deployment \\
+    OpenStack SkyHigh & Cloud Computing Platform & Deployment \\
+    Postman & API Collaboration Platform & API Development \\
+    TeamGantt & Gantt Diagram Tool & Gantt Chart \\
+    draw.io & Diagramming Tool & Other Diagrams \\
+    Traggo & Time-Tracking Tool & Tracking Time \\
+    Slack & Communication Platform & Communication \\
+     & Database & \\
+    \hline
+    \end{tabular}
+    \caption{Tools}
+    \label{tab:tools}
+\end{table}
+
+\subsection{Risk Analysis}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    Likelihood / Severity & Minimal & Marginal & Moderate & Major & Critical \\
+    \hline
+    Certain & \cellcolor[HTML]{ffC300} & \cellcolor[HTML]{ffC300} & \cellcolor[HTML]{ff4233} & \cellcolor[HTML]{ff4233} & \cellcolor[HTML]{ff4233} \\ 
+    \hline
+    Likely & \cellcolor[HTML]{fff000} & \cellcolor[HTML]{ffC300} & \cellcolor[HTML]{ffC300} & \cellcolor[HTML]{ff4233} & \cellcolor[HTML]{ff4233} \\ 
+    \hline     
+    Possible & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{fff000} & \cellcolor[HTML]{ffC300} & \cellcolor[HTML]{ffC300} & \cellcolor[HTML]{ff4233} \\
+    \hline
+    Unlikely & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{fff000} & \cellcolor[HTML]{fff000} & \cellcolor[HTML]{ffC300} & \cellcolor[HTML]{ffC300} \\ 
+    \hline
+    Rare & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{fff000} & \cellcolor[HTML]{fff000} & \cellcolor[HTML]{ffC300} \\
+    \hline
+    \end{tabular}
+    \caption{Risk Matrix (5x5)}
+    \label{tab:risk_matrix}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    Risk \# & Description & Likelihood & Consequence \\
+    \hline
+     & & Unlikely \cellcolor[HTML]{74ff00} & Minimal \cellcolor[HTML]{74ff00} \\
+    \hline
+     & & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{74ff00} \\
+    \hline
+     & & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{74ff00} \\
+    \hline
+     & & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{74ff00} \\
+    \hline
+    \end{tabular}
+    \caption{Risks}
+    \label{tab:risks}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    Risk \# & Mitigation & Priority \\
+    \hline
+    1 &  & High \cellcolor[HTML]{ff4233} \\
+    \hline
+    2 & & Medium \cellcolor[HTML]{fff000} \\
+    \hline
+    3 & & Low \cellcolor[HTML]{74ff00} \\
+    \hline
+    \end{tabular}
+    \caption{Risk Mitigation}
+    \label{tab:risk_mitigation}
+\end{table}
