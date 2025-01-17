@@ -9,6 +9,7 @@
 % Bibliography & References
 % Code input
 % Colors
+% Tables
 % Flow charts
 % Front matter
 % General
@@ -31,7 +32,7 @@
 
 % --- Bibliography & References---  
 \usepackage[backend = biber,    % Recommended backend for sorting bibliography
-            style = authoryear-comp,    % Close to the 'Harvard' referencing style
+            style = numeric,    % Close to the 'Harvard' referencing style
             urldate = long,     % Long: 24th Mar. 1997 | Short: 24/03/1997
             maxcitenames = 2,   % Number of authors in cite before replaced with 'Author#1 et al.'
             ]{biblatex}
@@ -48,7 +49,11 @@
 
 % --- Colors ---
 \usepackage[dvipsnames]{xcolor} % Using colors in LaTeX. This package is placed here as it needs to be imported previous to the flow chart packages to ensure no errors.
+
+% --- Tables ---
 \usepackage[table]{xcolor}
+\usepackage{tabularx}
+\usepackage{makecell}
 
 % --- Flow Charts ---
 % Keep in mind that you may customize these flow chart settings to fit your own preferences.
@@ -81,6 +86,7 @@
 }
 \usepackage{comment}    % Comment blocks of text using \begin{comment} ... \end{comment}
 \usepackage{pdfpages}   % Enables import of pdf-pages using e.g. \includepdf[pages=-]{./my_pdf.pdf}
+
 
 % --- Image ---
 \usepackage{graphicx}   % Handle images

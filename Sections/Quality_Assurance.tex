@@ -1,6 +1,6 @@
 \section{Quality Assurance Organization}
 
-\subsection{Documentation, Storage, Source Code}
+\subsection{Documentation, Storage, Source Code} \label{sec:documentation_storage_source_code}
 
 \begin{comment}
     Documentation
@@ -14,14 +14,27 @@
             Alle viktige valg som blir gjort etter diskusjoner blir notert
         
     Storage ?
-        Skylagring (slack, google drive, w/e) med backup på en separat enhet, egen eller sky
+        Skylagring i de SaaS vi bruker (Overleaf, Teamgantt, Traggo(?), fler) med backup i git for latex dokumenter og annet fil-basert data, google drive for dokumenter. I tilegg til lokal lagring på hvert medlems pc
+
+    Source code
+        Følge industri-standard dokumentasjon og kodestil for hvert kodespråk
+        Kanksje generere dokumetasjonssider fra kodedokumentasjon
         
 \end{comment}
 
-\subsection{Plan for Inspections \& Testing}
+\subsection{Plan for Inspections \& Testing}\label{sec:plan_for_inspections_&_testing}
 
-\subsection{Tools}
+\begin{comment}
+    GitOps som et sentralt konsept
+    Bruke CICD Pipelines for å automatisere så mye som mulig
+    f.eks. statiske kodesjekker og inspections, unittester og integrasjonstester
+    også deployment for å kunne ha manuelle inspeksjoner og tester during development
+    Plan om usertesting etter vi har MVP på plass midt i mars, jobbe utifra kravspesifikasjon og tilbakemelding fra productowner fram til det
+    
+\end{comment}
 
+\subsection{Tools}\label{sec:tools}
+Overview of the tools that the group plans to use during the project.
 \begin{table} [H]
     \centering
     \begin{tabular}{|l|l|l|}
@@ -46,7 +59,7 @@
     \label{tab:tools}
 \end{table}
 
-\subsection{Risk Analysis}
+\subsection{Risk Analysis}\label{sec:risk_analysis}
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|c|c|}
@@ -59,7 +72,7 @@
     \hline     
     Possible & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{fff000} & \cellcolor[HTML]{ffC300} & \cellcolor[HTML]{ffC300} & \cellcolor[HTML]{ff4233} \\
     \hline
-    Unlikely & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{fff000} & \cellcolor[HTML]{fff000} & \cellcolor[HTML]{ffC300} & \cellcolor[HTML]{ffC300} \\ 
+    Unlikely & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{fff000} & \cellcolor[HTML]{ffC300} & \cellcolor[HTML]{ffC300} \\ 
     \hline
     Rare & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{fff000} & \cellcolor[HTML]{fff000} & \cellcolor[HTML]{ffC300} \\
     \hline
@@ -68,19 +81,28 @@
     \label{tab:risk_matrix}
 \end{table}
 
+\begin{comment}
+    Mulige Risks
+
+    Gruppemedlem blir syk, se tabell
+    Miste source code eller dokumenter, som gjør at vi må recovere fra backups
+    Infrastruktur og systemer blir utsatt for cyberangrep, typ ddos
+    
+\end{comment}
+
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|}
     \hline
     Risk \# & Description & Likelihood & Consequence \\
     \hline
-     & & Unlikely \cellcolor[HTML]{74ff00} & Minimal \cellcolor[HTML]{74ff00} \\
+    1 & \makecell{One or more group members get sick over a longer \\period, making it hard to work on the project.} & Unlikely \cellcolor[HTML]{ffC300} & Major \cellcolor[HTML]{ffC300} \\
     \hline
-     & & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{74ff00} \\
+    2 & \makecell{Source code and/or documents become lost and unrecoverable \\due to  issues with their storage location.} & Unlikely \cellcolor[HTML]{ffC300} & Major \cellcolor[HTML]{ffC300} \\
     \hline
-     & & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{74ff00} \\
+    3 & \makecell{Infrastructure and systems could be attacked in a cyber attack, \\compromising the availability of the systems. } & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{74ff00} \\
     \hline
-     & & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{74ff00} \\
+    4 & & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{74ff00} \\
     \hline
     \end{tabular}
     \caption{Risks}
@@ -91,15 +113,17 @@
     \centering
     \begin{tabular}{|c|c|c|}
     \hline
-    Risk \# & Mitigation & Priority \\
+    Risk \# & Mitigation \& Measures & Priority \\
     \hline
-    1 &  & High \cellcolor[HTML]{ff4233} \\
+    1 & \makecell{The sick group member should work as much as possible. \\ Good documentation and communication will make it easier for \\ the other member to step in and help with the workload.} & High \cellcolor[HTML]{ff4233} \\
     \hline
-    2 & & Medium \cellcolor[HTML]{fff000} \\
+    2 & \makecell{Backups of all work should be made and stored in at least one \\separate location. See \ref{sec:documentation_storage_source_code}.} & High \cellcolor[HTML]{ff4233} \\
     \hline
-    3 & & Low \cellcolor[HTML]{74ff00} \\
+    3 & & Low \cellcolor[HTML]{fff000} \\
+    \hline
+    4 & & xxx \cellcolor[HTML]{74ff00} \\
     \hline
     \end{tabular}
-    \caption{Risk Mitigation}
+    \caption{Risk Mitigation \& Measures}
     \label{tab:risk_mitigation}
 \end{table}
