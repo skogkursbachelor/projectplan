@@ -4,11 +4,15 @@
 
 \begin{comment}
     Documentation
-        Kode
-            Følge industri-standard dokumentasjon og kodestil for hvert kodespråk
-            Kanksje generere dokumetasjonssider fra kodedokumentasjon
-        Misc dokumenter
-            
+        Andre skal kanskje bruke eller gjenbruke produktet vårt, så viktig med dokumentasjon av både sluttproduktet, i tillegg til hele prosessen.
+
+        Kode-produkter(?)
+            Deployment
+            APIdoc
+
+        Arbeidsprosessen
+            Så mye som mulig skal ligge under issues under GitHub Project, slik at vi dokumenterer hva vi har gjort. Timeføring blir gjort i Traggo som er tag-basert, slik at vi kan se hvor lenge vi har jobbet med feks admin, thesis, metting osv.
+        
         Møter og enigheter
             Møtenotater/referat skal bli tatt av alle møter
             Alle viktige valg som blir gjort etter diskusjoner blir notert
@@ -17,19 +21,20 @@
         Skylagring i de SaaS vi bruker (Overleaf, Teamgantt, Traggo(?), fler) med backup i git for latex dokumenter og annet fil-basert data, google drive for dokumenter. I tilegg til lokal lagring på hvert medlems pc
 
     Source code
-        Følge industri-standard dokumentasjon og kodestil for hvert kodespråk
-        Kanksje generere dokumetasjonssider fra kodedokumentasjon
+        Dokumentasjon av koden kommer til å bli brukt av gruppemedlemene, men kan også bli brukt av noen som vil videreutvikle produktet.
+        Følge industri-standard dokumentasjon og kodestil for hvert kodespråk, med hyppig bruk av en linter. 
+        Prøve å skrive self-documenting code ved å ha descriptive funksjonsnavn og variabler, slik at man kan holde kodekommentarene korte og konsise
         
 \end{comment}
 
 \subsection{Plan for Inspections \& Testing}\label{sec:plan_for_inspections_&_testing}
 
 \begin{comment}
-    GitOps som et sentralt konsept
-    Bruke CICD Pipelines for å automatisere så mye som mulig
-    f.eks. statiske kodesjekker og inspections, unittester og integrasjonstester
-    også deployment for å kunne ha manuelle inspeksjoner og tester during development
-    Plan om usertesting etter vi har MVP på plass midt i mars, jobbe utifra kravspesifikasjon og tilbakemelding fra productowner fram til det
+    - GitOps som et sentralt konsept
+    - Bruke CICD Pipelines for å automatisere så mye som mulig
+    f.eks. statiske kodesjekker og inspections, unittester og integrasjonstester, også deployment for å kunne ha manuelle inspeksjoner og tester during development.
+    - Linting for Go (eks. golangci-lint).
+    - Plan om usertesting etter vi har MVP på plass midt i mars, jobbe utifra kravspesifikasjon og tilbakemelding fra productowner fram til det.
     
 \end{comment}
 
@@ -52,6 +57,7 @@ Overview of the tools that the group plans to use during the project.
     draw.io & Diagramming Tool & Other Diagrams \\
     Traggo & Time-Tracking Tool & Tracking Time \\
     Slack & Communication Platform & Communication \\
+    Leaflet / OpenLayers & JavaScript Library for Interactive Maps & Interactive Map  \\
      & Database & \\
     \hline
     \end{tabular}
@@ -100,7 +106,7 @@ Overview of the tools that the group plans to use during the project.
     \hline
     2 & \makecell{Source code and/or documents become lost and unrecoverable \\due to  issues with their storage location.} & Unlikely \cellcolor[HTML]{ffC300} & Major \cellcolor[HTML]{ffC300} \\
     \hline
-    3 & \makecell{Infrastructure and systems could be attacked in a cyber attack, \\compromising the availability of the systems. } & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{74ff00} \\
+    3 & \makecell{Infrastructure and systems could be attacked in a cyber attack, \\compromising the availability of the systems. } & Unlikely \cellcolor[HTML]{ffC300} & Major\cellcolor[HTML]{ffC300} \\
     \hline
     4 & & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{74ff00} \\
     \hline
@@ -115,7 +121,7 @@ Overview of the tools that the group plans to use during the project.
     \hline
     Risk \# & Mitigation \& Measures & Priority \\
     \hline
-    1 & \makecell{The sick group member should work as much as possible. \\ Good documentation and communication will make it easier for \\ the other member to step in and help with the workload.} & High \cellcolor[HTML]{ff4233} \\
+    1 & \makecell{The sick group member should work as much as possible. \\ Good documentation and communication will make it easier for \\ the other member to step in and help with the workload.} & Medium \cellcolor[HTML]{fff000} \\
     \hline
     2 & \makecell{Backups of all work should be made and stored in at least one \\separate location. See \ref{sec:documentation_storage_source_code}.} & High \cellcolor[HTML]{ff4233} \\
     \hline
