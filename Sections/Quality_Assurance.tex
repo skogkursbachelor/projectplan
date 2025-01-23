@@ -16,9 +16,6 @@
         Møter og enigheter
             Møtenotater/referat skal bli tatt av alle møter
             Alle viktige valg som blir gjort etter diskusjoner blir notert
-        
-    Storage ?
-        Skylagring i de SaaS vi bruker (Overleaf, Teamgantt, Traggo(?), fler) med backup i git for latex dokumenter og annet fil-basert data, google drive for dokumenter. I tilegg til lokal lagring på hvert medlems pc
 
     Source code
         Dokumentasjon av koden kommer til å bli brukt av gruppemedlemene, men kan også bli brukt av noen som vil videreutvikle produktet.
@@ -26,12 +23,68 @@
         Prøve å skrive self-documenting code ved å ha descriptive funksjonsnavn og variabler, slik at man kan holde kodekommentarene korte og konsise
         
 \end{comment}
+% Kanskje ha 5.1.1 til 5.1 og 5.1.2 til 5.2 osv
+% \subsection{Documentation}
+\subsubsection{Documentation}
+
+xxx
+
+\subsubsection{Storage}
+%Storage ?
+% Skylagring i de SaaS vi bruker (Overleaf, Teamgantt, Traggo(?), fler) med backup i git for latex dokumenter og annet fil-basert data, google drive for dokumenter. I tilegg til lokal lagring på hvert medlems pc
+% kanskje tabell med 
+% 3-2-1 rule med ref til noe.
+% "offsite" blir da egene pcer, siden de har lang spatial distanse
+% Asset | Main | Backup | Offsite |
+% Fil/data
+% Liten time-scale så trenger ikke flere medium av samme plass
+\begin{table} [H]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+    Asset & Main & Backup & Offsite \\
+    \hline
+    % noe annet for local pc
+    % latex documenter blir også lagret på skyhigh siden vi autocloner alle repoer
+    \LaTeX-documents & Overleaf & GitHub & Local PC \\
+    % Kanban blir også tatt med i sourcecode
+    Source code & GitHub & SkyHiGh backup server & Local PC \\
+    Kanban & GitHub & SkyHiGh backup server & Local PC \\
+    % Jobhours overview? noesånt
+    Traggo & SkyHiGh & SkyHiGh backup server & Local PC \\
+    Slack data & & & \\
+    \hline
+    \end{tabular}
+    \caption{3-2-1 Backup Strategy}
+    \label{tab:tools}
+\end{table}
+
+\begin{comment}
+    https://stackoverflow.com/questions/19576742/how-to-clone-all-repos-at-once-from-github
+    for auto clone til skyhigh
+\end{comment}
+
+\subsubsection{Source Code}
 
 \subsection{Plan for Inspections \& Testing}\label{sec:plan_for_inspections_&_testing}
 
+\begin{itemize}
+    \item Use CI/CD pipelines in GitHub to automate as much as possible. This should be set up early in the development.
+    \item These pipelines will include:
+    \begin{itemize}
+        \item Static Code Analysis / Linting
+        \item Unit \& Integration Testing
+        \item Deployment
+        % Docker?
+        % Packaging?
+        % Security?
+    \end{itemize}
+    \item User-testing with Product Owner and potential end-users after MVP is done.
+\end{itemize}
+
 \begin{comment}
     - GitOps som et sentralt konsept
-    - Bruke CICD Pipelines for å automatisere så mye som mulig
+    - Bruke CI/CD Pipelines i GitHubfor å automatisere så mye som mulig
     f.eks. statiske kodesjekker og inspections, unittester og integrasjonstester, også deployment for å kunne ha manuelle inspeksjoner og tester during development.
     - Linting for Go (eks. golangci-lint).
     - Plan om usertesting etter vi har MVP på plass midt i mars, jobbe utifra kravspesifikasjon og tilbakemelding fra productowner fram til det.
@@ -49,8 +102,8 @@ Overview of the tools that the group plans to use during the project.
     OverLeaf & Online \LaTeX-Editor & Report writing \\
     JetBrains IDE Family & IDE & Code Development \\
     VS Code & IDE & Code Development \\
-    GitHub & Code Repository & Version Control \& Scrum \\
-    Docker & Containerization Platform & Containerizing deployment \\
+    GitHub & Code Repository & Version Control \& Kanban \\
+    Docker & Containerization Platform & Containerizing Deployment \\
     OpenStack SkyHigh & Cloud Computing Platform & Deployment \\
     Postman & API Collaboration Platform & API Development \\
     TeamGantt & Gantt Diagram Tool & Gantt Chart \\
@@ -66,6 +119,9 @@ Overview of the tools that the group plans to use during the project.
 \end{table}
 
 \subsection{Risk Analysis}\label{sec:risk_analysis}
+
+This section outlines potential scenarios found for the project. Each risk scenario uses the following matrix for likelihood and severity, which is divided into four categories, from green (low risk) to red (high risk). Each scenario also has a measure or mitigation with a priority from low to high. 
+
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|c|c|}
@@ -104,11 +160,15 @@ Overview of the tools that the group plans to use during the project.
     \hline
     1 & \makecell{One or more group members get sick over a longer \\period, making it hard to work on the project.} & Unlikely \cellcolor[HTML]{ffC300} & Major \cellcolor[HTML]{ffC300} \\
     \hline
-    2 & \makecell{Source code and/or documents become lost and unrecoverable \\due to  issues with their storage location.} & Unlikely \cellcolor[HTML]{ffC300} & Major \cellcolor[HTML]{ffC300} \\
+    2 & \makecell{Source code and/or documents become lost and unrecoverable \\due to  issues with their storage location.} & Unlikely \cellcolor[HTML]{ffC300} & Critical \cellcolor[HTML]{ffC300} \\
     \hline
     3 & \makecell{Infrastructure and systems could be attacked in a cyber attack, \\compromising the availability of the systems. } & Unlikely \cellcolor[HTML]{ffC300} & Major\cellcolor[HTML]{ffC300} \\
     \hline
-    4 & & \cellcolor[HTML]{74ff00} & \cellcolor[HTML]{74ff00} \\
+    4 & \makecell{The project's objectives expand beyond the initial plan, \\ consuming additional time and resources} & Possible \cellcolor[HTML]{ffC300} & Major \cellcolor[HTML]{ffC300} \\
+    \hline
+    5 & \makecell{The sources for maps and geotechnical \\ data become inaccessible.} & Rare \cellcolor[HTML]{fff000} & Major \cellcolor[HTML]{fff000} \\
+    \hline
+    6 & \makecell{Delayed meetings or feedback from supervisor, \\ causing slight adjustments to the schedule.} & Possible \cellcolor[HTML]{74ff00} & Minimal \cellcolor[HTML]{74ff00} \\
     \hline
     \end{tabular}
     \caption{Risks}
@@ -125,9 +185,13 @@ Overview of the tools that the group plans to use during the project.
     \hline
     2 & \makecell{Backups of all work should be made and stored in at least one \\separate location. See \ref{sec:documentation_storage_source_code}.} & High \cellcolor[HTML]{ff4233} \\
     \hline
-    3 & & Low \cellcolor[HTML]{fff000} \\
+    3 & \makecell{Proper and strict security rules needs to be in place to limit the \\access to only needed ports. Load-balancing and rate-limiting \\should be used to ensure availability.} & High \cellcolor[HTML]{ff4233} \\
     \hline
-    4 & & xxx \cellcolor[HTML]{74ff00} \\
+    4 & \makecell{Clearly define project goals and milestones. \\ Review the scope with stakeholders to prevent unnecessary additions.} & High \cellcolor[HTML]{ff4233} \\
+    \hline
+    5 & \makecell{Research alternate data sources early in the project and \\ implement modular design in the code for easier transition.} & High \cellcolor[HTML]{ff4233} \\
+    \hline
+    6 & \makecell{Practice good communication with the supervisor and \\ include buffer time in the project plan.} & Low \cellcolor[HTML]{74ff00} \\
     \hline
     \end{tabular}
     \caption{Risk Mitigation \& Measures}
