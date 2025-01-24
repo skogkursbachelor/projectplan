@@ -1,10 +1,12 @@
 \section{Quality Assurance Organization}
 
-\subsection{Documentation, Storage, Source Code} \label{sec:documentation_storage_source_code}
+\subsection{Documentation, Source Code, Storage} \label{sec:documentation_storage_source_code}
 
 \begin{comment}
     Documentation
         Andre skal kanskje bruke eller gjenbruke produktet vårt, så viktig med dokumentasjon av både sluttproduktet, i tillegg til hele prosessen.
+
+        Commitmeldingsstandard
 
         Kode-produkter(?)
             Deployment
@@ -25,18 +27,19 @@
 \end{comment}
 % Kanskje ha 5.1.1 til 5.1 og 5.1.2 til 5.2 osv
 % \subsection{Documentation}
-\subsubsection{Documentation}
+\subsubsection{Documentation}  
+Proper documentation is crucial, as there is a possibility that others may use the code in the future. To address this, both the code and the development process will be thoroughly documented throughout the project. All tasks will be tracked and recorded as GitHub issues, ensuring a clear history of the project's progress. Additionally, the proceedings of all meetings will be recorded by the designated minutes-taker. Furthermore, a comprehensive user guide detailing how to use the product will be created.  
 
-xxx
+\subsubsection{Source Code}  
+All source code will adhere to industry-standard documentation practices and linting rules specific to each programming language to ensure clarity and maintainability. For Go, the project will follow Google's official style guide \cite{google_go_style}. \\
+
+GitHub commits should adhere to a defined standard \cite{commit_standard}. Each commit message must include a relevant keyword that categorizes the task performed, such as feat, fix, docs, style, refactor, test, or chore. Additionally, each message should provide a brief and concise description of the changes made.
 
 \subsubsection{Storage}
-%Storage ?
 % Skylagring i de SaaS vi bruker (Overleaf, Teamgantt, Traggo(?), fler) med backup i git for latex dokumenter og annet fil-basert data, google drive for dokumenter. I tilegg til lokal lagring på hvert medlems pc
-% kanskje tabell med 
 % 3-2-1 rule med ref til noe.
 % "offsite" blir da egene pcer, siden de har lang spatial distanse
-% Asset | Main | Backup | Offsite |
-% Fil/data
+
 % Liten time-scale så trenger ikke flere medium av samme plass
 \begin{table} [H]
     \centering
@@ -48,10 +51,11 @@ xxx
     % latex documenter blir også lagret på skyhigh siden vi autocloner alle repoer
     \LaTeX-documents & Overleaf & GitHub & Local PC \\
     % Kanban blir også tatt med i sourcecode
-    Source code & GitHub & SkyHiGh backup server & Local PC \\
-    Kanban & GitHub & SkyHiGh backup server & Local PC \\
+    Source code & GitHub & SkyHiGh Backup Server & Local PC \\
+    Kanban with issues & GitHub & IKKE SKYHIGH & Local PC \\
     % Jobhours overview? noesånt
-    Traggo & SkyHiGh & SkyHiGh backup server & Local PC \\
+    Minutes & GitHub & SkyHiGh Backup Server & Local PC \\
+    Traggo & SkyHiGh & SkyHiGh Backup Server & Local PC \\
     Slack data & & & \\
     \hline
     \end{tabular}
@@ -64,23 +68,23 @@ xxx
     for auto clone til skyhigh
 \end{comment}
 
-\subsubsection{Source Code}
-
 \subsection{Plan for Inspections \& Testing}\label{sec:plan_for_inspections_&_testing}
 
 \begin{itemize}
-    \item Use CI/CD pipelines in GitHub to automate as much as possible. This should be set up early in the development.
-    \item These pipelines will include:
+    \item Implement CI/CD pipelines in GitHub to automate processes as much as possible, starting early in development.
+    \item The pipelines will include:
     \begin{itemize}
-        \item Static Code Analysis / Linting
-        \item Unit \& Integration Testing
+        \item Static Code Analysis and Linting
+        \item Unit and Integration Testing
         \item Deployment
         % Docker?
         % Packaging?
         % Security?
     \end{itemize}
-    \item User-testing with Product Owner and potential end-users after MVP is done.
+    \item Conduct user testing with the Product Owner and potential end-users once the MVP is complete.
+    \item For unit and integration testing, we aim for 80\% or higher coverage, with a focus on critical components and an emphasis on test quality over quantity.
 \end{itemize}
+
 
 \begin{comment}
     - GitOps som et sentralt konsept
@@ -92,7 +96,7 @@ xxx
 \end{comment}
 
 \subsection{Tools}\label{sec:tools}
-Overview of the tools that the group plans to use during the project.
+This section provides a detailed overview of the tools that the group intends to use throughout the project. These tools have been selected to facilitate various aspects of the project, including development, collaboration, deployment, and documentation. The table below outlines each tool, its type, and its specific use case within the project workflow.
 \begin{table} [H]
     \centering
     \begin{tabular}{|l|l|l|}
@@ -120,7 +124,7 @@ Overview of the tools that the group plans to use during the project.
 
 \subsection{Risk Analysis}\label{sec:risk_analysis}
 
-This section outlines potential scenarios found for the project. Each risk scenario uses the following matrix for likelihood and severity, which is divided into four categories, from green (low risk) to red (high risk). Each scenario also has a measure or mitigation with a priority from low to high. 
+This section presents potential risk scenarios identified for the project. Each scenario is evaluated using a matrix that assesses likelihood and severity, categorized into four levels ranging from green (low risk) to red (high risk). Additionally, each scenario includes proposed measures or mitigations, prioritized from low to high.
 
 \begin{table}[H]
     \centering
