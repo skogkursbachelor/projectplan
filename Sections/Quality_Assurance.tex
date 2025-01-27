@@ -31,14 +31,26 @@
 Proper documentation is crucial, as there is a possibility that others may use the code in the future. To address this, both the code and the development process will be thoroughly documented throughout the project. All tasks will be tracked and recorded as GitHub issues, ensuring a clear history of the project's progress. Additionally, the proceedings of all meetings will be recorded by the designated minutes-taker. Furthermore, a comprehensive user guide detailing how to use the product will be created.  
 
 \subsubsection{Source Code}  
-All source code will adhere to industry-standard documentation practices and linting rules specific to each programming language to ensure clarity and maintainability. For Go, the project will follow Google's official style guide \cite{google_go_style}. \\
+All source code will adhere to industry-standard documentation practices and linting rules specific to each programming language to ensure clarity and maintainability. Although all source code should be documented, self-documenting code will be a central concept in naming variables and functions. For Go, the project will follow Google's official style guide \cite{google_go_style}. 
 
 GitHub commits should adhere to a defined standard \cite{commit_standard}. Each commit message must include a relevant keyword that categorizes the task performed, such as feat, fix, docs, style, refactor, test, or chore. Additionally, each message should provide a brief and concise description of the changes made.
 
 \subsubsection{Storage}
-% Skylagring i de SaaS vi bruker (Overleaf, Teamgantt, Traggo(?), fler) med backup i git for latex dokumenter og annet fil-basert data, google drive for dokumenter. I tilegg til lokal lagring på hvert medlems pc
-% 3-2-1 rule med ref til noe.
-% "offsite" blir da egene pcer, siden de har lang spatial distanse
+
+To ensure that no valuable data is lost during the project we will follow the 3-2-1 backup strategy. According to Seagate, the 3-2-1 rule has the following requirements \cite{3-2-1_data_storage}:
+
+\begin{itemize}
+    \item 3 Copies of Data
+    \item 2 Different Media
+    \item 1 Copy Offiste
+\end{itemize}
+
+This strategy is used to prevent total data loss by copying data to different mediums and locations, ensuring that a disaster wont destroy all copies. A total loss of project assets would be catastrophic for the project, it is therefore important to minimize this risk as much as possible. 
+
+The original copy of data is mainly stored by the associated SaaS provider, i.e. Overleaf for \LaTeX-documents, GitHub for repositories, and Slack for communications. A central backup server in SkyHiGh will continuously take backups of all repositories under the GitHub organization, along with copies of Traggo data. The two different mediums are covered by the two backups, as SkyHiGh mainly uses HDDs and our local PCs has SSDs. 
+
+Informal copies of repositories will also be taken throughout the project as a natural part of development. Slack data and GitHub Kanban with issues will be exported and copied from a local PC to the backup server monthly.
+See table below for an overview of our strategy. 
 
 % Liten time-scale så trenger ikke flere medium av samme plass
 \begin{table} [H]
@@ -49,24 +61,21 @@ GitHub commits should adhere to a defined standard \cite{commit_standard}. Each 
     \hline
     % noe annet for local pc
     % latex documenter blir også lagret på skyhigh siden vi autocloner alle repoer
-    \LaTeX-documents & Overleaf & GitHub & Local PC \\
+    \LaTeX-documents & Overleaf & GitHub repositories & Local PC \\
     % Kanban blir også tatt med i sourcecode
-    Source code & GitHub & SkyHiGh Backup Server & Local PC \\
-    Kanban with issues & GitHub & IKKE SKYHIGH & Local PC \\
+    Source code \& repositories & GitHub & SkyHiGh backup server & Local PC \\
+    Kanban with issues & GitHub & SkyHiGh backup server & Local PC \\
     % Jobhours overview? noesånt
-    Minutes & GitHub & SkyHiGh Backup Server & Local PC \\
-    Traggo & SkyHiGh & SkyHiGh Backup Server & Local PC \\
-    Slack data & & & \\
+    Minutes & GitHub & SkyHiGh backup server & Local PC \\
+    Traggo & SkyHiGh & SkyHiGh backup server & Local PC \\
+    % Slack må exportes og scp til skyhigh
+    Slack data & Slack & SkyHiGh backup server & Local PC \\
     \hline
     \end{tabular}
     \caption{3-2-1 Backup Strategy}
     \label{tab:tools}
 \end{table}
 
-\begin{comment}
-    https://stackoverflow.com/questions/19576742/how-to-clone-all-repos-at-once-from-github
-    for auto clone til skyhigh
-\end{comment}
 
 \subsection{Plan for Inspections \& Testing}\label{sec:plan_for_inspections_&_testing}
 
