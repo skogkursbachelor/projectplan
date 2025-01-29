@@ -1,35 +1,76 @@
+\newpage
 \section{Execution Plan}
 
 This section details the project's execution plan, presented through a Gantt chart. The plan is organized into distinct milestones, activities, and decision points for clarity and effective tracking.
 
 \subsection{Gantt Chart}
-\begin{comment}
-    1. Terraform for OpenStack
-    2. Docker
-    3. Evt. Database
 
-    https://app.teamgantt.com/projects/gantt?ids=4177546
-\end{comment}
+\begin{figure}[H]
+    \centering
+    %\includepdf[pages=1,scale=0.5,trim=0 0 0 0mm,clip,offset=0mm 0mm,fitpaper=true]{Appendices/skogkurs_bachelor_gantt.pdf}
+    \includegraphics[width=1.0\linewidth, trim=0 60mm 0 20mm, clip]{Images/skogkurs_bachelor_gantt.pdf}
+    \caption{Gantt Chart}
+    \label{fig:gantt}
+\end{figure}
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|c|c|c|}
+    \begin{tabular}{|l|l|l|l|l|}
     \hline
-    \# & Name / Title & Start-Date & End-Date & Predecessors \\
-    \hline
-    1 & Bachelor's Thesis & 2025-01-13 & 2025-06-04 & \\
-    \hline
-    1.1 & Pre-project & 2025-01-13 & 2025-01-31 & \\
-    \hline
-    1.1.1 & Project plan & 2025-01-13 & 2025-01-31 & \\
-    \hline
-    1.1.1.1 & Writing & 2025-01-13 & 2025-01-28 & \\
-    \hline
-    1.1.1.2 & Review & 2025-01-29 & 2025-01-31 & 1.1.1.1 \\
-    \hline
+        \# & Name / Title & Start Date & End Date & Predecessors \\ \hline
+        1 & Skogkurs Bachelor & 2025-01-13 & 2025-06-04 & ~ \\ \hline
+        1.1 & Pre project & 2025-01-13 & 2025-01-31 & ~ \\ \hline
+        1.1.1 & Project plan & 2025-01-13 & 2025-01-31 & ~ \\ \hline
+        1.1.1.1 & Writing & 2025-01-13 & 2025-01-28 & ~ \\ \hline
+        1.1.1.2 & Review & 2025-01-29 & 2025-01-31 & 1.1.1.1 \\ \hline
+        1.1.1.3 & Delivery & 2025-01-31 & 2025-01-31 & 1.1.1.2 \\ \hline
+        1.1.2 & Create structure & 2025-01-13 & 2025-01-24 & ~ \\ \hline
+        1.1.2.1 & Time tracker & 2025-01-13 & 2025-01-14 & ~ \\ \hline
+        1.1.2.2 & Kanban & 2025-01-13 & 2025-01-17 & ~ \\ \hline
+        1.1.2.3 & Version control & 2025-01-16 & 2025-01-21 & ~ \\ \hline
+        1.1.2.4 & Infrastructure & 2025-01-20 & 2025-01-24 & ~ \\ \hline
+        1.1.3 & Development Preperation & 2025-01-20 & 2025-01-31 & ~ \\ \hline
+        1.1.3.1 & Establish workflow & 2025-01-20 & 2025-01-24 & ~ \\ \hline
+        1.1.3.2 & Research & 2025-01-20 & 2025-01-31 & ~ \\ \hline
+        1.1.3.3 & Determine functional requirements & 2025-01-27 & 2025-01-31 & ~ \\ \hline
+        1.2 & Product development & 2025-02-03 & 2025-04-25 & ~ \\ \hline
+        1.2.1 & Sprint 1 & 2025-02-03 & 2025-02-14 & ~ \\ \hline
+        1.2.1.1 & System design & 2025-02-03 & 2025-02-11 & ~ \\ \hline
+        1.2.1.2 & Research & 2025-02-06 & 2025-02-14 & ~ \\ \hline
+        1.2.2 & Sprint 2 & 2025-02-17 & 2025-02-28 & ~ \\ \hline
+        1.2.2.1 & API / Serverside & 2025-02-17 & 2025-02-21 & ~ \\ \hline
+        1.2.2.2 & Decide website design & 2025-02-21 & 2025-02-21 & ~ \\ \hline
+        1.2.2.3 & Website & 2025-02-24 & 2025-02-28 & 1.2.2.2 \\ \hline
+        1.2.3 & Sprint 3 & 2025-03-03 & 2025-03-14 & ~ \\ \hline
+        1.2.3.1 & Integration & 2025-03-03 & 2025-03-07 & ~ \\ \hline
+        1.2.3.2 & Bug fixing and polish & 2025-03-10 & 2025-03-14 & ~ \\ \hline
+        1.2.4 & MVP & 2025-03-14 & 2025-03-14 & 1.2.3.2 \\ \hline
+        1.2.5 & Sprint 4 & 2025-03-17 & 2025-03-28 & ~ \\ \hline
+        1.2.5.1 & User testing & 2025-03-17 & 2025-03-21 & 1.2.4 \\ \hline
+        1.2.5.2 & Implement feedback from users & 2025-03-17 & 2025-03-28 & ~ \\ \hline
+        1.2.6 & Sprint 5 & 2025-03-31 & 2025-04-11 & ~ \\ \hline
+        1.2.6.1 & Implement feedback from suers & 2025-03-31 & 2025-04-11 & ~ \\ \hline
+        1.2.7 & MMP & 2025-04-11 & 2025-04-11 & 1.2.6.1 \\ \hline
+        1.2.8 & Sprint 6 & 2025-04-14 & 2025-04-25 & ~ \\ \hline
+        1.2.8.1 & Polish & 2025-04-14 & 2025-04-25 & 1.2.7 \\ \hline
+        1.3 & Vacation & 2025-04-17 & 2025-04-21 & ~ \\ \hline
+        1.3.1 & Easter & 2025-04-17 & 2025-04-21 & ~ \\ \hline
+        1.4 & Project report & 2025-02-03 & 2025-05-20 & ~ \\ \hline
+        1.4.1 & Continous writing & 2025-02-03 & 2025-04-11 & ~ \\ \hline
+        1.4.2 & Sprint 6 & 2025-04-14 & 2025-04-25 & ~ \\ \hline
+        1.4.2.1 & Report writing & 2025-04-14 & 2025-04-25 & ~ \\ \hline
+        1.4.3 & Sprint 7 & 2025-04-28 & 2025-05-09 & ~ \\ \hline
+        1.4.3.1 & Intensive writing & 2025-04-28 & 2025-05-09 & ~ \\ \hline
+        1.4.4 & Sprint 8 & 2025-05-12 & 2025-05-20 & ~ \\ \hline
+        1.4.4.1 & Review & 2025-05-12 & 2025-05-20 & ~ \\ \hline
+        1.4.5 & Delivery & 2025-05-20 & 2025-05-20 & 1.4.4.1 \\ \hline
+        1.5 & Presentation & 2025-05-21 & 2025-06-04 & ~ \\ \hline
+        1.5.1 & Development & 2025-05-21 & 2025-05-30 & ~ \\ \hline
+        1.5.2 & Practise & 2025-06-02 & 2025-06-03 & 1.5.1 \\ \hline
+        1.5.3 & Present & 2025-06-04 & 2025-06-04 & 1.5.2 \\ \hline
     \end{tabular}
     \caption{Gantt Chart in Text-Format}
-    \label{tab:gantt_text}
+    \label{gantt_text}
 \end{table}
 
 

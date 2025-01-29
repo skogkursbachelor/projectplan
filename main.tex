@@ -15,6 +15,13 @@
 
 % Inserting table of contents
 \tableofcontents
+\hypersetup{    % Color of hyper-references
+    colorlinks,
+    citecolor = blue,
+    filecolor = magenta,
+    linkcolor = magenta,
+    urlcolor = magenta
+}
 
 % Inserting list of figures & list of tables
 \listoffigures
@@ -30,13 +37,35 @@
 \import{./Sections/}{Quality_Assurance}
 \import{./Sections/}{Execution_Plan}
 
-\addappendix
-\includepdf[pages=-,pagecommand=\thispagestyle{plain}]{Appendices/SKOGKURS_BACHELOROPPGAVE.pdf}
-
 % Bibliography
 \newpage
 \printbibliography[heading = bibintoc, title = Bibliography]
 % 'bibintoc' inserts our bibliography into the table of contents
+
+% Appendix
+\addappendix
+
+% Section for the first part of the appendix
+\section{Thesis Proposal (Norwegian)}
+\label{appendix:thesis_proposal}
+
+% Include PDF pages
+\begin{minipage}{\textwidth}
+    \centering
+    \includepdf[pages=1,scale=1,trim=0 0 0 20mm,clip,offset=0mm -20mm,fitpaper=true]{Appendices/SKOGKURS_BACHELOROPPGAVE.pdf}
+\end{minipage}
+
+\includepdf[pages=2-,scale=1,trim=0 0 0 20mm,clip,,offset=0 -20mm,fitpaper=true]{Appendices/SKOGKURS_BACHELOROPPGAVE.pdf}
+
+% Section for the first part of the appendix
+\section{Group Contract (Norwegian)}
+\label{appendix:group_contract}
+
+% Include PDF pages
+\begin{minipage}{\textwidth}
+    \centering
+    \includepdf[pages=1,scale=1, trim=0 0 0 0mm, clip,offset=0 -5mm,fitpaper=true]{Appendices/bachelor_skogkurs_samarbeidsavtale}
+\end{minipage}
 
 % End of document
 \end{document}
