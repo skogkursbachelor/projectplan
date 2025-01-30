@@ -4,6 +4,12 @@
 % Importing document settings from our file "packages.sty"
 \usepackage{packages}
 
+% fjerner tallet før section
+%\makeatletter
+%\renewcommand\thesection{}
+%\renewcommand\thesubsection{\@arabic\c@section.\@arabic\c@subsection}
+%\makeatother
+
 % Beginning of document
 \begin{document}
 
@@ -13,19 +19,20 @@
 % Defining front matter settings (Norsk: innstillinger for forord m.m.)
 \frontmatter
 
+% Wrap in group to ensure only these are reset
+\begingroup
+% Resets coloring of links for TOC and LOF / LOT
+\hypersetup{hidelinks}
+
 % Inserting table of contents
 \tableofcontents
-\hypersetup{    % Color of hyper-references
-    colorlinks,
-    citecolor = blue,
-    filecolor = magenta,
-    linkcolor = magenta,
-    urlcolor = magenta
-}
 
 % Inserting list of figures & list of tables
 \listoffigures
 \listoftables
+\endgroup
+
+
 
 % Defining main matter settings (Norsk: innstillinger for hoveddelen av teksten)
 \mainmatter
@@ -46,8 +53,8 @@
 \addappendix
 
 % Section for the first part of the appendix
-\section{Thesis Proposal (Norwegian)}
-\label{appendix:thesis_proposal}
+\section{Thesis Assignment (Norwegian)}
+\label{appendix:thesis_assignment}
 
 % Include PDF pages
 \begin{minipage}{\textwidth}

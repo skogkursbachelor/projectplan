@@ -1,18 +1,60 @@
 \section{Scope}
 \subsection{Domain}
-% formler, data vi bruker, hvordan vi bruker de
-% skogsbruk, kart, api
+
+The project domain encompasses the fields of geographic information systems (GIS), forestry, meteorology, and computer science, with a specific focus on digital modeling, data-driven decision support, and web-based visualization. 
+
+The project aims to integrate geospatial analysis, predictive modeling, and user interface design to improve the classification and usability of forest roads under varying environmental conditions.  
 
 \subsection{Delimitation}
 \begin{itemize}
     \item The product will primarily focus on mapping Gjøvik and its surrounding areas, as including larger regions would result in an excessive amount of data.
     \item The weight of vehicles using the roads will not be factored in when determining trafficability.
     \item The trafficability forecast for forest roads will extend up to a maximum of two weeks, as the product owner does not require a longer time frame.
-    \item All software will be deployed on NTNU-hosted servers.
 \end{itemize}
 
 \subsection{Task Description}
-% mål/deler som skal til for å task
-% analyse
-% website
 
+The project aims to develop and test a prototype system for fully digital modeling of forest road load-bearing capacity under varying conditions throughout the year. The development process can be divided into the following areas:
+
+\begin{enumerate}
+    \item \textbf{Data collection and Integration:}
+    \begin{itemize}
+        \item Decide and gather relevant geological and meteorological data, which may include:
+        \begin{itemize}
+            \item Superficial deposits, soil moisture, ground water, ground frost.
+            \item Weather forecasts.
+            \item Historical and real-time road conditions.
+        \end{itemize}
+        \item Identify and implement suitable data sources and APIs for continuous updates.
+    \end{itemize}
+    
+    \item \textbf{Classification and Forecasting:}
+    \begin{itemize}
+        \item Develop a rule-based model to classify road conditions based on environmental factors.  
+        \item Implement a traffic-light classification system (Green = Safe, Yellow = Caution, Red = Unsafe).  
+        \item Extend the model to provide forecasted road conditions at least a week in advance.  
+    \end{itemize}
+    
+    \item \textbf{Web-Based Visual and User Interface:}
+    \begin{itemize}
+        \item Design and develop an interactive map-based website for intuitive accessibility.
+        \item Implement a GIS-based visualization with real-time updates and historical road condition tracking. 
+        \item Ensure the system is optimized for transport managers, with a user-friendly interface that allows efficient decision-making. 
+    \end{itemize}
+    
+    \item \textbf{Testing, Validation and Refinement}:
+    \begin{itemize}
+        \item Evaluate the system’s accuracy and usability through testing with real-world data.
+        \item Conduct user testing with transport managers or forestry stakeholders to assess the effectiveness of the interactive interface and forecasting capabilities.
+        \item Incorporate potential user feedback.
+    \end{itemize} 
+    
+    \item \textbf{Documentation and Future Work:}
+    \begin{itemize}
+        \item Provide detailed documentation of the system architecture, data sources, and model.
+        \item Provide a detailed user guide of the product.
+        \item Suggest potential improvements, such as machine learning model enhancements, additional data sources, further improvements of app interface, optimization, or mobile application integration. 
+    \end{itemize}
+\end{enumerate}
+
+\newpage
