@@ -5,7 +5,7 @@ Proper documentation is crucial, as there is a possibility that others may use t
 
 \subsection{Source Code}  
 
-All source code will adhere to industry-standard documentation practices and linting rules specific to each programming language to ensure clarity and maintainability. Although all source code should be documented, self-documenting code will be a central concept in naming variables and functions. For Go, the project will follow Google's official style guide \cite{google_go_style}. 
+All source code will adhere to industry-standard documentation practices and linting rules specific to each programming language to ensure clarity and maintainability. Although all source code should be documented, self-documenting code will be a central concept in naming variables and functions. For Go, the project will follow Google's official style guide \cite{google_go_style}. All code should also handle errors properly to ensure the availability and integrity of the product.
 
 GitHub commits should adhere to a defined standard \cite{commit_standard}. Each commit message must include a relevant keyword that categorizes the task performed, such as feat, fix, docs, style, refactor, test, or chore. Additionally, each message should provide a brief and concise description of the changes made. 
 
@@ -19,11 +19,11 @@ To ensure that no valuable data is lost during the project we will follow the 3-
     \item 1 Copy Offsite
 \end{itemize}
 
-This strategy is used to prevent total data loss by copying data to different mediums and locations, ensuring that a disaster wont destroy all copies. A total loss of project assets would be catastrophic for the project, it is therefore important to minimize this risk as much as possible. 
+This strategy is used to prevent total data loss by copying data to different mediums and locations, ensuring that a disaster does not destroy all copies. A total loss of project assets would be catastrophic for the project, it is therefore important to minimize this risk as much as possible. 
 
-The original copy of data is mainly stored by the associated SaaS provider, i.e. Overleaf for \LaTeX-documents, GitHub for repositories, and Slack for communications. A central backup server in SkyHiGh will continuously take backups of all repositories under the GitHub organization \cite{github_org}, along with copies of Traggo data. The two different mediums are covered by the two backups, as SkyHiGh mainly uses HDDs and our local PCs has SSDs. 
+The original copy of data is mainly stored by the associated SaaS provider, i.e. Overleaf for \LaTeX-documents, GitHub for repositories, and Slack for communications. A central backup server in SkyHiGh will continuously take backups of all repositories under the GitHub organization \cite{github_org}, along with copies of Traggo data. The two different mediums are covered by the two backups, as SkyHiGh mainly uses HDDs and our local PCs have SSDs. 
 
-Informal copies of repositories will also be taken throughout the project as a natural part of development. Slack data and GitHub Kanban with issues will be exported and copied from a local PC to the backup server monthly.
+Informal copies of repositories will also be taken throughout the project as a natural part of development. Slack data and the Kanban board on GitHub with issues will be exported and copied from a local PC to the backup server monthly.
 See table below for an overview of our strategy. 
 
 % Liten time-scale så trenger ikke flere medium av samme plass
@@ -33,16 +33,11 @@ See table below for an overview of our strategy.
     \hline
     \textbf{Asset} & \textbf{Main} & \textbf{Backup} & \textbf{Offsite} \\
     \hline
-    % noe annet for local pc
-    % latex documenter blir også lagret på skyhigh siden vi autocloner alle repoer
     \LaTeX-documents & Overleaf & GitHub repositories & Local PC \\
-    % Kanban blir også tatt med i sourcecode
     Source code \& repositories & GitHub \cite{github_org} & SkyHiGh backup server & Local PC \\
     Kanban with issues & GitHub \cite{github_org} & SkyHiGh backup server & Local PC \\
-    % Jobhours overview? noesånt
     Minutes & GitHub \cite{github_org} & SkyHiGh backup server & Local PC \\
     Traggo & SkyHiGh & SkyHiGh backup server & Local PC \\
-    % Slack må exportes og scp til skyhigh
     Slack data & Slack & SkyHiGh backup server & Local PC \\
     \hline
     \end{tabular}
@@ -53,7 +48,7 @@ See table below for an overview of our strategy.
 \subsection{Plan for Inspections \& Testing}\label{sec:plan_for_inspections_&_testing}
 
 \begin{itemize}
-    \item Implement CI/CD pipelines in GitHub to automate processes as much as possible, starting early in development.
+    \item Implement CI/CD pipelines on GitHub to automate processes as much as possible, starting early in development.
     \item The pipelines will include:
     \begin{itemize}
         \item Static Code Analysis and Linting
@@ -63,22 +58,21 @@ See table below for an overview of our strategy.
         % Packaging?
         % Security?
     \end{itemize}
-    \item Conduct user testing with the Product Owner and potential end-users once the MVP is complete.
-    \item For unit and integration testing, we aim for 80\% or higher coverage, with a focus on critical components and an emphasis on test quality over quantity.
+    \item Conduct user testing with the Product Owner and potential end-users once the MVP is complete. Interviews and follow-ups will be conducted to measure satisfaction and gather feedback for the MMP.
+    \item For unit and integration testing, we aim for 80\% or higher coverage, with a primary focus on critical components and an emphasis on test quality over quantity.
+    \item To monitor errors, identify potential availability and integrity issues, and facilitate debugging, a logging system will be implemented.
 \end{itemize}
-
 
 \begin{comment}
     - GitOps som et sentralt konsept
     - Bruke CI/CD Pipelines i GitHubfor å automatisere så mye som mulig
     f.eks. statiske kodesjekker og inspections, unittester og integrasjonstester, også deployment for å kunne ha manuelle inspeksjoner og tester during development.
-    - Linting for Go (eks. golangci-lint).
-    - Plan om usertesting etter vi har MVP på plass midt i mars, jobbe utifra kravspesifikasjon og tilbakemelding fra productowner fram til det.
-    
 \end{comment}
 
 \subsection{Tools}\label{sec:tools}
+
 This section provides a detailed overview of the tools that the group intends to use throughout the project. These tools have been selected to facilitate various aspects of the project, including development, collaboration, deployment, and documentation. The table below outlines each tool, its type, and its specific use case within the project workflow.
+
 \begin{table} [H]
     \centering
     \begin{tabular}{|l|l|l|}
@@ -128,15 +122,6 @@ This section presents potential risk scenarios identified for the project. Each 
     \label{tab:risk_matrix}
 \end{table}
 
-\begin{comment}
-    Mulige Risks
-
-    Gruppemedlem blir syk, se tabell
-    Miste source code eller dokumenter, som gjør at vi må recovere fra backups
-    Infrastruktur og systemer blir utsatt for cyberangrep, typ ddos
-    
-\end{comment}
-
 \begin{table}[H]
     \centering
     \begin{tabularx}{\textwidth}{|c|>{\centering\arraybackslash}X|c|c|}
@@ -151,9 +136,11 @@ This section presents potential risk scenarios identified for the project. Each 
     \hline
     4 & The project's objectives expand beyond the initial plan, consuming additional time and resources. & Possible \cellcolor[HTML]{ffC300} & Major \cellcolor[HTML]{ffC300} \\
     \hline
-    5 & The sources for maps and geotechnical data become inaccessible. & Rare \cellcolor[HTML]{fff000} & Major \cellcolor[HTML]{fff000} \\
+    5 & The sources for geotechnical data are found to be too unreliable or inaccurate. & Possible \cellcolor[HTML]{ff4233} & Critical \cellcolor[HTML]{ff4233} \\
     \hline
-    6 & Delayed meetings or feedback from supervisor, causing slight adjustments to the schedule. & Possible \cellcolor[HTML]{74ff00} & Minimal \cellcolor[HTML]{74ff00} \\
+    6 & The sources for maps and geotechnical data become inaccessible. & Rare \cellcolor[HTML]{fff000} & Major \cellcolor[HTML]{fff000} \\
+    \hline
+    7 & Delayed meetings or feedback from supervisor, causing slight adjustments to the schedule. & Possible \cellcolor[HTML]{74ff00} & Minimal \cellcolor[HTML]{74ff00} \\
     \hline
     \end{tabularx}
     \caption{Risks}
@@ -174,9 +161,9 @@ This section presents potential risk scenarios identified for the project. Each 
     \hline
     4 & Clearly define project goals and milestones. Review the scope with stakeholders to prevent unnecessary additions. & High \cellcolor[HTML]{ff4233} \\
     \hline
-    5 & Research alternate data sources early in the project and implement modular design in the code for easier transition. & High \cellcolor[HTML]{ff4233} \\
+    5 \& 6 & Research alternate data sources early in the project and implement modular and flexible design in the code for easier transition. & High \cellcolor[HTML]{ff4233} \\
     \hline
-    6 & Practice good communication with the supervisor and include buffer time in the project plan. & Low \cellcolor[HTML]{74ff00} \\
+    7 & Practice good communication with the supervisor and include buffer time in the project plan. & Low \cellcolor[HTML]{74ff00} \\
     \hline
     \end{tabularx}
     \caption{Risk Mitigation \& Measures}
